@@ -1,0 +1,27 @@
+div class="container center"
+  form method="post" action="/product/edit"
+    h4 Edit item
+    br
+    div class="list-container center"
+      input type="hidden" name="item[id]" value="#{@product.id}"
+      | Name:
+      br
+      input type="text" size="25" name="item[name]" value="#{@product.name}"
+      br
+      br
+      | Quantity:
+      br
+      input type="text" size="25" name="item[quantity]" value="#{@product.quantity}"
+      br
+      br
+      | Location:
+      br
+      select name="item[store_id]"
+        - @stores.each do |x|
+          - if x.id == @product.store_id
+            option value="#{x.id}" selected="selected" #{x.name}
+          - else
+            option value="#{x.id}" #{x.name}
+      br
+      br
+      input type="submit"

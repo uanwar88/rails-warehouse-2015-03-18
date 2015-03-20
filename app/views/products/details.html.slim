@@ -1,0 +1,8 @@
+div class="container center"
+  h4 style="text-decoration: underline;" Item details
+  h5 Name: #{@product[0].name}
+  h5 Quantity: #{@product[0].quantity}
+  h5 Location(s):
+  - @product.each do |x|
+    | #{x.store_name}
+    br

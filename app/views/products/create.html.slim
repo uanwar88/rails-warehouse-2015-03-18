@@ -1,0 +1,17 @@
+div class="container center"
+  div class="list-container center"
+    = form_for :product, url: { action: "new" } do |f|
+      = f.label :name, "Name: "
+      = f.text_field :name, size: 25
+      br
+      br
+      = f.label :quantity, "Quantity: "
+      = f.text_field :quantity, size: 25
+      br
+      br
+      = f.label :store_ids, "Location(s): "
+      br
+      = f.select :store_ids, options_from_collection_for_select(@stores, :id, :name), {}, {multiple: true, size: 5, style: "width: 150px;"}
+      br
+      br
+      = f.submit "Submit"

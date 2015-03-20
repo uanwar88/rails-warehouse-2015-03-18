@@ -1,0 +1,14 @@
+div class="container center"
+  form method="get" action="/product"
+    h4 What would you like to do?
+    br
+    div class="list-container center"
+      select name="client[action]"
+        option value="1" Create
+        option value="2" Find
+        option value="3" Update
+        option value="4" Delete
+      |  item.
+      br
+      br
+      input type="submit"

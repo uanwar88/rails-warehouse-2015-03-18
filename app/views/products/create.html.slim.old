@@ -1,0 +1,23 @@
+div class="container center"
+  form method="post" action="/product/new"
+    h4 Create new item
+    br
+    div class="list-container center"
+      | Name:
+      br
+      input type="text" size="25" name="item[name]"
+      br
+      br
+      | Quantity:
+      br
+      input type="text" size="25" name="item[quantity]"
+      br
+      br
+      | Location:
+      br
+      select name="item[store_ids][]" multiple="multiple"
+        - @stores.each do |x|
+          option value="#{x.id}" #{x.name}
+      br
+      br
+      input type="submit"
